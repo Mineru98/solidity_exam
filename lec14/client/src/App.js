@@ -42,6 +42,7 @@ const App = () =>{
             throw "MetamskNeeds";
         }
         let users = await web3.eth.getAccounts();
+        console.log(users)
         await setuserAccount(users[0]);
         await deployContracts(web3,users);
     },[])
@@ -51,14 +52,16 @@ const App = () =>{
             Lecture14.abi,
             Lecture14.networks[networkId] && Lecture14.networks[networkId].address,
         )
+        console.log(lec14);
         await setLecture14(lec14);
     },[])
 
 
     async function getEvent (){
+        console.log("Test#1");
         let events = await lecture14.getPastEvents('numberTracker2',{ filter:{num:[2,1]},fromBlock: 1, toBlock:'latest'});
         console.log(events)
-
+        console.log("Test#2");
         let events2 = await lecture14.getPastEvents('numberTracker',{ filter:{num:[2,1]},fromBlock: 1, toBlock:'latest'});
         console.log(events2)
     }

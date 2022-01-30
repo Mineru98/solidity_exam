@@ -1,5 +1,14 @@
-var Lecture14 = artifacts.require("./Lecture14.sol");
+// const ConvertLib = artifacts.require("ConvertLib");
+// const MetaCoin = artifacts.require("MetaCoin");
+//
+// module.exports = function(deployer) {
+//   deployer.deploy(ConvertLib);
+//   deployer.link(ConvertLib, MetaCoin);
+//   deployer.deploy(MetaCoin);
+// };
+
+const Lecture14 = artifacts.require("./Lecture14.sol");
 
 module.exports = function(deployer) {
-    deployer.deploy(Lecture14);
+  deployer.deploy(Lecture14);
 };
